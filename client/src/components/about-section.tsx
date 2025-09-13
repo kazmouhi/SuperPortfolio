@@ -108,7 +108,7 @@ export default function AboutSection() {
                   <div>
                     <p className="text-sm text-muted-foreground">Fiverr</p>
                     <a 
-                      href="https://fiverr.com/hassan_kazmouhi" 
+                      href="https://www.fiverr.com/s/jjZx51o" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="font-semibold text-sm hover:text-primary transition-colors"
@@ -124,7 +124,7 @@ export default function AboutSection() {
                   <div>
                     <p className="text-sm text-muted-foreground">Upwork</p>
                     <a 
-                      href="https://upwork.com/freelancers/hassan-kazmouhi" 
+                      href="https://www.upwork.com/freelancers/~018257999031f609c9?mp_source=share" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="font-semibold text-sm hover:text-primary transition-colors"
