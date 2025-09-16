@@ -151,7 +151,7 @@ export default function HeroSection() {
                 data-testid="link-fiverr"
               >
                 <a
-                  href="https://fiverr.com/hassan_kazmouhi"
+                  href="https://www.fiverr.com/sanouhi/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
