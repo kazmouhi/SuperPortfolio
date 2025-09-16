@@ -69,7 +69,7 @@ export default function Footer() {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="https://www.fiverr.com/s/m5rYk9Z"
+                href="https://www.fiverr.com/sanouhi/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
