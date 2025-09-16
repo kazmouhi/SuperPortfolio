@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { User, MapPin, Mail,Linkedin , Phone } from "lucide-react";
+import { User, MapPin, Mail, Phone } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 
 // Fiverr Icon Component
@@ -57,6 +57,7 @@ export default function AboutSection() {
             </div>
 
             {/* Personal info cards */}
+            <div className="grid sm:grid-cols-2 gap-4 mt-8">
               <Card className="p-4 hover-elevate">
                 <div className="flex items-center space-x-3">
                   <Mail className="text-primary h-5 w-5" />
@@ -83,14 +84,14 @@ export default function AboutSection() {
                 <div className="flex items-center space-x-3">
                   <Linkedin className="text-primary h-5 w-5" />
                   <div>
-                    <p className="text-sm text-muted-foreground">Fiverr</p>
+                    <p className="text-sm text-muted-foreground">Linkedin</p>
                     <a 
-                      href="https://www.fiverr.com/sanouhi/" 
+                      href="https://www.linkedin.com/in/hassan-kazmouhi/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="font-semibold text-sm hover:text-primary transition-colors"
                     >
-                      @San_Ouhi
+                      @hassan-kazmouhi
                     </a>
                   </div>
                 </div>
@@ -101,12 +102,12 @@ export default function AboutSection() {
                   <div>
                     <p className="text-sm text-muted-foreground">Fiverr</p>
                     <a 
-                      href="https://www.linkedin.com/in/hassan-kazmouhi/" 
+                      href="https://www.fiverr.com/sanouhi/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="font-semibold text-sm hover:text-primary transition-colors"
                     >
-                      @hassan-kazmouhi
+                      @hassan_kazmouhi
                     </a>
                   </div>
                 </div>
