@@ -141,7 +141,7 @@ export default function ContactSection() {
                   className="hover-elevate"
                   data-testid="social-fiverr"
                 >
-                  <a href="https://fiverr.com/hassan_kazmouhi" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.fiverr.com/sanouhi/" target="_blank" rel="noopener noreferrer">
                     <FiverrIcon className="h-5 w-5" />
                   </a>
                 </Button>
