@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { User, MapPin, Mail, Phone } from "lucide-react";
+import { User, MapPin, Mail,Linkedin , Phone } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
 
 // Fiverr Icon Component
@@ -57,29 +57,6 @@ export default function AboutSection() {
             </div>
 
             {/* Personal info cards */}
-            <div className="grid sm:grid-cols-2 gap-4 mt-8">
-              <Card className="p-4 hover-elevate">
-                <div className="flex items-center space-x-3">
-                  <User className="text-primary h-5 w-5" />
-                  <div>
-                    <p className="text-sm text-muted-foreground">
-                      {t("about.age")}
-                    </p>
-                    <p className="font-semibold">25 ans</p>
-                  </div>
-                </div>
-              </Card>
-              <Card className="p-4 hover-elevate">
-                <div className="flex items-center space-x-3">
-                  <MapPin className="text-primary h-5 w-5" />
-                  <div>
-                    <p className="text-sm text-muted-foreground">
-                      {t("about.location")}
-                    </p>
-                    <p className="font-semibold">Tanger, Maroc</p>
-                  </div>
-                </div>
-              </Card>
               <Card className="p-4 hover-elevate">
                 <div className="flex items-center space-x-3">
                   <Mail className="text-primary h-5 w-5" />
@@ -104,7 +81,7 @@ export default function AboutSection() {
               </Card>
               <Card className="p-4 hover-elevate">
                 <div className="flex items-center space-x-3">
-                  <FiverrIcon className="text-primary h-5 w-5" />
+                  <Linkedin className="text-primary h-5 w-5" />
                   <div>
                     <p className="text-sm text-muted-foreground">Fiverr</p>
                     <a 
@@ -114,6 +91,22 @@ export default function AboutSection() {
                       className="font-semibold text-sm hover:text-primary transition-colors"
                     >
                       @San_Ouhi
+                    </a>
+                  </div>
+                </div>
+              </Card>
+              <Card className="p-4 hover-elevate">
+                <div className="flex items-center space-x-3">
+                  <FiverrIcon className="text-primary h-5 w-5" />
+                  <div>
+                    <p className="text-sm text-muted-foreground">Fiverr</p>
+                    <a 
+                      href="https://www.linkedin.com/in/hassan-kazmouhi/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="font-semibold text-sm hover:text-primary transition-colors"
+                    >
+                      @hassan-kazmouhi
                     </a>
                   </div>
                 </div>
@@ -131,6 +124,17 @@ export default function AboutSection() {
                     >
                       @hassan-kazmouhi
                     </a>
+                  </div>
+                </div>
+              </Card>
+              <Card className="p-4 hover-elevate">
+                <div className="flex items-center space-x-3">
+                  <MapPin className="text-primary h-5 w-5" />
+                  <div>
+                    <p className="text-sm text-muted-foreground">
+                      {t("about.location")}
+                    </p>
+                    <p className="font-semibold">Tanger, Maroc</p>
                   </div>
                 </div>
               </Card>
