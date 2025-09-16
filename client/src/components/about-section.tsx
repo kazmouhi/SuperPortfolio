@@ -108,7 +108,7 @@ export default function AboutSection() {
                   <div>
                     <p className="text-sm text-muted-foreground">Fiverr</p>
                     <a 
-                      href="https://www.fiverr.com/s/m5rYk9Z" 
+                      href="https://www.fiverr.com/sanouhi/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="font-semibold text-sm hover:text-primary transition-colors"
