@@ -108,12 +108,12 @@ export default function AboutSection() {
                   <div>
                     <p className="text-sm text-muted-foreground">Fiverr</p>
                     <a 
-                      href="https://www.fiverr.com/s/jjZx51o" 
+                      href="https://www.fiverr.com/s/m5rYk9Z" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="font-semibold text-sm hover:text-primary transition-colors"
                     >
-                      @hassan_kazmouhi
+                      @San_Ouhi
                     </a>
                   </div>
                 </div>
