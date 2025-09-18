@@ -8,56 +8,112 @@ type ThemeProviderContextType = {
   toggleTheme: () => void;
 };
 
-const ThemeProviderContext = createContext<ThemeProviderContextType | undefined>(undefined);
+const ThemeProviderContext = createContext<
+  ThemeProviderContextType | undefined
+>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
-  const [isInitialized, setIsInitialized] = useState(false);
+  const [theme, setTheme] = useState<Theme>(() => {
+    console.log("🎨 ThemeProvider: Initializing theme state");
 
-  // Initialize theme from localStorage on the client side only
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      try {
-        const savedTheme = localStorage.getItem("theme") as Theme;
-        if (savedTheme && (savedTheme === "light" || savedTheme === "dark")) {
-          setTheme(savedTheme);
-        } else {
-          // Check system preference if no saved theme
-          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-          setTheme(prefersDark ? "dark" : "light");
-        }
-      } catch (error) {
-        // Fallback if localStorage access fails
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        setTheme(prefersDark ? "dark" : "light");
-      }
-      setIsInitialized(true);
+    if (typeof window === "undefined") {
+      console.log("🎨 ThemeProvider: Server-side, defaulting to light");
+      return "light";
     }
-  }, []);
+
+    // Check current document class
+    const currentClass = document.documentElement.className;
+    console.log("🎨 ThemeProvider: Current document className:", currentClass);
+
+    if (currentClass.includes("dark")) {
+      console.log("🎨 ThemeProvider: Found dark class on document");
+      return "dark";
+    }
+    if (currentClass.includes("light")) {
+      console.log("🎨 ThemeProvider: Found light class on document");
+      return "light";
+    }
+
+    // Check localStorage
+    try {
+      const savedTheme = localStorage.getItem("theme") as Theme;
+      console.log("🎨 ThemeProvider: localStorage theme:", savedTheme);
+
+      if (savedTheme && (savedTheme === "light" || savedTheme === "dark")) {
+        console.log("🎨 ThemeProvider: Using saved theme:", savedTheme);
+        return savedTheme;
+      }
+    } catch (error) {
+      console.warn(
+        "🎨 ThemeProvider: Failed to read from localStorage:",
+        error,
+      );
+    }
+
+    // Check system preference
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    console.log("🎨 ThemeProvider: System prefers dark:", prefersDark);
+
+    const systemTheme = prefersDark ? "dark" : "light";
+    console.log("🎨 ThemeProvider: Using system theme:", systemTheme);
+
+    return systemTheme;
+  });
 
   useEffect(() => {
-    if (isInitialized && typeof window !== "undefined") {
-      const root = window.document.documentElement;
-      root.classList.remove("light", "dark");
-      root.classList.add(theme);
-      try {
-        localStorage.setItem("theme", theme);
-      } catch (error) {
-        // Handle localStorage write failures silently
-        console.warn("Failed to save theme preference:", error);
-      }
+    console.log("🎨 ThemeProvider: useEffect triggered, theme:", theme);
+
+    if (typeof window === "undefined") {
+      console.log("🎨 ThemeProvider: Server-side, skipping DOM update");
+      return;
     }
-  }, [theme, isInitialized]);
+
+    const root = document.documentElement;
+    const currentClasses = Array.from(root.classList);
+
+    console.log(
+      "🎨 ThemeProvider: Current classes before update:",
+      currentClasses,
+    );
+
+    // Remove existing theme classes
+    root.classList.remove("light", "dark");
+
+    // Add new theme class
+    root.classList.add(theme);
+
+    const newClasses = Array.from(root.classList);
+    console.log("🎨 ThemeProvider: New classes after update:", newClasses);
+
+    // Save to localStorage
+    try {
+      localStorage.setItem("theme", theme);
+      console.log("🎨 ThemeProvider: Saved theme to localStorage:", theme);
+    } catch (error) {
+      console.warn("🎨 ThemeProvider: Failed to save to localStorage:", error);
+    }
+  }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    const newTheme = theme === "light" ? "dark" : "light";
+    console.log("🎨 ThemeProvider: Toggling theme from", theme, "to", newTheme);
+    setTheme(newTheme);
+  };
+
+  const changeTheme = (newTheme: Theme) => {
+    console.log("🎨 ThemeProvider: Changing theme to:", newTheme);
+    setTheme(newTheme);
   };
 
   const value = {
     theme,
-    setTheme,
+    setTheme: changeTheme,
     toggleTheme,
   };
+
+  console.log("🎨 ThemeProvider: Rendering with theme:", theme);
 
   return (
     <ThemeProviderContext.Provider value={value}>
