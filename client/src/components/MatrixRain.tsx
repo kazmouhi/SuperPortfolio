@@ -1,8 +1,7 @@
 // components/MatrixRain.tsx
 import { useEffect, useRef } from "react";
 
-const chars =
-  "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const chars ="アァカجثتبرذدخحضصشسزفغعظطنملكقيوهـأサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 export default function MatrixRain() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
