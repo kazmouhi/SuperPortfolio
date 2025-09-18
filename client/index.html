@@ -10,10 +10,13 @@
           const savedTheme = localStorage.getItem('theme');
           const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
           const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+          
+          // Remove any existing theme classes and add the correct one
           document.documentElement.className = theme;
         } catch (e) {
           // Fallback if localStorage fails
-          document.documentElement.className = 'light';
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.className = prefersDark ? 'dark' : 'light';
         }
       })();
     </script>
