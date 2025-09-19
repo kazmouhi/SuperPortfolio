@@ -68,81 +68,83 @@ export default function AboutSection() {
                 </Card>
               </a>
               <Card className="p-4 hover-elevate">
-                <div className="flex items-center space-x-3">
-                  <Phone className="text-primary h-5 w-5" />
-                  <div>
-                    <a href="tel:+212652571213">
+                <a href="tel:+212652571213">
+                  <div className="flex items-center space-x-3">
+                    <Phone className="text-primary h-5 w-5" />
+                    <div>
                       <p className="text-sm text-muted-foreground">
                         {t("about.phone")}
                       </p>
                       <p className="font-semibold">+212 652 57 12 13</p>
-                    </a>
+                    </div>
                   </div>
-                </div>
+                </a>
               </Card>
               <Card className="p-4 hover-elevate">
+              <a
+                href="https://www.linkedin.com/in/hassan-kazmouhi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-sm hover:text-primary transition-colors"
+              >
                 <div className="flex items-center space-x-3">
                   <Linkedin className="text-primary h-5 w-5" />
                   <div>
-                    <a
-                      href="https://www.linkedin.com/in/hassan-kazmouhi/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-semibold text-sm hover:text-primary transition-colors"
-                    >
-                      <p className="text-sm text-muted-foreground">Linkedin</p>
-                      @hassan-kazmouhi
-                    </a>
+                    <p className="text-sm text-muted-foreground">
+                      Linkedin
+                    </p>
+                        @hassan-kazmouhi
+                    </div>
                   </div>
-                </div>
+                </a>
               </Card>
               <Card className="p-4 hover-elevate">
-                <div className="flex items-center space-x-3">
-                  <FiverrIcon className="text-primary h-5 w-5" />
-                  <div>
-                    <a
-                      href="https://www.fiverr.com/sanouhi/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-semibold text-sm hover:text-primary transition-colors"
-                    >
+                <a
+                  href="https://www.fiverr.com/sanouhi/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-sm hover:text-primary transition-colors"
+                >
+                  <div className="flex items-center space-x-3">
+                    <FiverrIcon className="text-primary h-5 w-5" />
+                    <div>
                       <p className="text-sm text-muted-foreground">Fiverr</p>
                       @hassan_kazmouhi
-                    </a>
+                    </div>
                   </div>
-                </div>
+                </a>
               </Card>
               <Card className="p-4 hover-elevate">
-                <div className="flex items-center space-x-3">
-                  <UpworkIcon className="text-primary h-5 w-5" />
-                  <div>
-                    <a
-                      href="https://www.upwork.com/freelancers/~018257999031f609c9?mp_source=share"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-semibold text-sm hover:text-primary transition-colors"
-                    >
+                <a
+                  href="https://www.upwork.com/freelancers/~018257999031f609c9?mp_source=share"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-sm hover:text-primary transition-colors"
+                  >
+                  <div className="flex items-center space-x-3">
+                    <UpworkIcon className="text-primary h-5 w-5" />
+                    <div>
                       <p className="text-sm text-muted-foreground">Upwork</p>
                       @hassan-kazmouhi
-                    </a>
+                    </div>
                   </div>
-                </div>
+                </a>
               </Card>
               <Card className="p-4 hover-elevate">
-                <div className="flex items-center space-x-3">
-                  <MapPin className="text-primary h-5 w-5" />
-                  <div>
-                    <a
-                      href="https://maps.app.goo.gl/udpvi45my2odfwpT8"
-                      target="_blank"
-                    >
+                <a
+                  href="https://maps.app.goo.gl/udpvi45my2odfwpT8"
+                  target="_blank"
+                >
+                  <div className="flex items-center space-x-3">
+                    <MapPin className="text-primary h-5 w-5" />
+                    <div>
                       <p className="text-sm text-muted-foreground">
                         {t("about.location")}
                       </p>
                       <p className="font-semibold">Tanger, Maroc</p>
-                    </a>
+                    </div>
                   </div>
-                </div>
+                </a>
               </Card>
             </div>
           </div>
