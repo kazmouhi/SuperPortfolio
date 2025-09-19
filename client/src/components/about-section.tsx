@@ -54,19 +54,19 @@ export default function AboutSection() {
 
             {/* Personal info cards */}
             <div className="grid sm:grid-cols-2 gap-4 mt-8">
-              <Card className="p-4 hover-elevate">
-                <div className="flex items-center space-x-3">
-                  <Mail className="text-primary h-5 w-5" />
-                  <div>
-                    <a href="mailto:Kazmouhi.malak@gmail.com">
+              <a href="mailto:Kazmouhi.malak@gmail.com">
+                <Card className="p-4 hover-elevate">
+                  <div className="flex items-center space-x-3">
+                    <Mail className="text-primary h-5 w-5" />
+                    <div>
                       <p className="text-sm text-muted-foreground">Email</p>
                       <p className="font-semibold text-sm">
                         Kazmouhi.malak@gmail.com
                       </p>
-                    </a>
+                    </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </a>
               <Card className="p-4 hover-elevate">
                 <div className="flex items-center space-x-3">
                   <Phone className="text-primary h-5 w-5" />
